@@ -1,0 +1,34 @@
+[2015-12-04 01:34:01] local.ERROR: exception 'InvalidArgumentException' with message 'Command "vendor" is not defined.
+
+Did you mean this?
+    vendor:publish' in /var/www/html/vendor/symfony/console/Application.php:549
+Stack trace:
+#0 /var/www/html/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->find('vendor')
+#1 /var/www/html/vendor/symfony/console/Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/html/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2015-12-04 01:35:37] local.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)' in /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:55
+Stack trace:
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(55): PDO->__construct('mysql:host=loca...', 'homestead', 'secret', Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(22): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#2 /var/www/html/bootstrap/cache/compiled.php(11373): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 /var/www/html/bootstrap/cache/compiled.php(11369): Illuminate\Database\Connectors\ConnectionFactory->createSingleConnection(Array)
+#4 /var/www/html/bootstrap/cache/compiled.php(11284): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#5 /var/www/html/bootstrap/cache/compiled.php(11239): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(171): Illuminate\Database\DatabaseManager->connection(NULL)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(139): Illuminate\Database\Migrations\DatabaseMigrationRepository->getConnection()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(393): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(100): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(58): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#11 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#12 /var/www/html/bootstrap/cache/compiled.php(1181): call_user_func_array(Array, Array)
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call(Array)
+#14 /var/www/html/vendor/symfony/console/Command/Command.php(259): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(878): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(195): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /var/www/html/vendor/symfony/console/Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 /var/www/html/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 {main}  
